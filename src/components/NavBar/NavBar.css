@@ -1,31 +1,124 @@
-.NavBar{
-    position: fixed;
-    width: 100%;
-  
+.navBar{
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  box-shadow: 0 5px 20px -15px black;
+  backdrop-filter: blur(10px); 
+  margin-bottom: 20px;
+  height: 90px;
+}
+
+.navBarText{
+  animation: slide-in .5s forwards;
+  -webkit-animation: slide-in .5s forwards;
+  position: absolute; 
+  right: 0px;
+}
+
+.navHamburger{
+  margin-right: 40px;
+  cursor: pointer;
+  font-size: 35px;
+  animation: slide-out .5s forwards;
+  -webkit-animation: slide-out .5s forwards;
+}
+
+@keyframes slide-in {
+  0% { transform: translateX(300%); }
+  50% { transform: translateX(300%); }
+  100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+  0% { -webkit-transform: translateX(300%); }
+  50% { -webkit-transform: translateX(300%); }
+  100% { -webkit-transform: translateX(0%); }
+}
+
+
+@keyframes slide-out {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(300%); }
+}
+
+@-webkit-keyframes slide-out {
+  0% { -webkit-transform: translateX(0%); }
+  100% { -webkit-transform: translateX(300%); }
+}
+
+.navHamburger svg, .navLogo{
+  z-index: 100;
+}
+
+.navBar .navBarLi:hover{
+  color: #cccccc;
+}
+
+.hamburgerText{
+  display: none;
+  font-size: 35px;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  background-color: rgba(34, 34, 34, .9);
+  width: 100vw;
+  height: 100vh;
+}
+
+.navBar ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  list-style-type: none;
+  margin-right: 20px;
+}
+
+.navBarLi{
+  margin: 5px 20px;
+  cursor: pointer;
+}
+
+.navLogo{
+  margin-left: 40px;
+}
+
+.resume{
+  color: inherit;
+  text-decoration: none;
+}
+
+.resume:hover{
+  text-decoration: underline;
+}
+
+.logo{
+  max-width: 75px;
+}
+
+@media (max-width: 850px){
+  .navBarText{
+    display: none;
+    animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+  }
+
+  .navHamburger{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-  
-    box-shadow: 0 5px 20px -15px black;
-    backdrop-filter: blur(10px); 
-    margin-bottom: 20px;
-    height: 90px;
+    animation: slide-in 0.5s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
   }
-  
-  .NavBar ul{
+
+  .hamburgerText{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    list-style-type: none;
   }
-  
-  .NavBar .li{
-    margin-right: 40px;
-    cursor: pointer;
-  }
-  
-  .navLogo{
-    margin-left: 40px;
-  }
+}
